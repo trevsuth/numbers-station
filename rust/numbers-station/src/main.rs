@@ -11,7 +11,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let encoded = numbers_station::stego::embed_lsb(pcm, secret)
         .map_err(|e| format!("stego embed failed {e}"))?;
 
-    let out_path = PathBuf::from("out_station.way");
+    let out_path = PathBuf::from("out_station.wav");
     numbers_station::audio::write_wav_mono_i16(out_path, sample_rate, &encoded)?;
 
     println!("Wrote out_station.wav");
