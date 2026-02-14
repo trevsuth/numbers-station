@@ -10,7 +10,7 @@
 # Configuration
 # -------------------------
 
-RUST_DIR := rust/numbers-station
+RUST_DIR := "rust/numbers-station"
 
 # Default recipe
 default:

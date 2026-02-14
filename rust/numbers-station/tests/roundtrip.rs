@@ -39,7 +39,7 @@ fn extract_rejects_bad_magic() {
 
     // Corrupt the first byte of the frame ("NS01") vy flipping the first bit
     // This alters the extracted magic and should trigger BadMagic
-    encoded[0] = 1;
+    encoded[0] ^= 1;
 
     let err = stego::extract_lsb(&encoded).unwrap_err();
     assert_eq!(err, stego::StegoError::BadMagic);

@@ -1,5 +1,3 @@
-use std::path::PathBuf;
-
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let sample_rate = 44_100u32;
     let seed = 42u64;

@@ -93,7 +93,7 @@ fn build_frame(message: &[u8]) -> Vec<u8> {
 fn frame_bits(frame: &[u8]) -> impl Iterator<Item = u8> + '_ {
     frame
         .iter()
-        .flat_map(|&byte| (8..0).map(move |i| (byte >> i) & 1))
+        .flat_map(|&byte| (0..8).map(move |i| (byte >> i) & 1))
 }
 
 fn read_bytes_from_lsb(samples: &[i16], num_bytes: usize) -> Result<Vec<u8>, StegoError> {
